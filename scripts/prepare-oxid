@@ -24,8 +24,9 @@ fi
 
 mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD -e "DROP DATABASE IF EXISTS $MYSQL_DATABASE_NAME"
 mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD -e "CREATE DATABASE $MYSQL_DATABASE_NAME"
-mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE_NAME < oxid/setup/sql/database.sql
-mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE_NAME < oxid/setup/sql/latin1_to_utf8.sql
+mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE_NAME < source/Setup/Sql/database_schema.sql
+mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE_NAME < source/Setup/Sql/latin1_to_utf8
+#mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE_NAME < source/Setup/Sql/initial_data.sql
 
 
 # =============================================================================
